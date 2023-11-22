@@ -4,9 +4,9 @@ using Dalamud.Plugin;
 using System.IO;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin.Services;
-using SamplePlugin.Windows;
+using GlamSiphon.Windows;
 
-namespace SamplePlugin
+namespace GlamSiphon
 {
     public sealed class Plugin : IDalamudPlugin
     {
@@ -16,7 +16,7 @@ namespace SamplePlugin
         private DalamudPluginInterface PluginInterface { get; init; }
         private ICommandManager CommandManager { get; init; }
         public Configuration Configuration { get; init; }
-        public WindowSystem WindowSystem = new("SamplePlugin");
+        public WindowSystem WindowSystem = new("GlamSiphon");
 
         private ConfigWindow ConfigWindow { get; init; }
         private MainWindow MainWindow { get; init; }
