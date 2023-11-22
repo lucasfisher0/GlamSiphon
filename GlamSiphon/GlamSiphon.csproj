@@ -83,7 +83,7 @@
 
     <!-- External Projects -->
     <ItemGroup>
-        <!--<ProjectReference Include="..\OtterGui\OtterGui.csproj" />-->
+        <!--<ProjectReference Include="..\Glamourer\Glamourer\Glamourer.csproj" />-->
         <ProjectReference Include="..\Xande\Xande\Xande.csproj"/>
     </ItemGroup>
     
