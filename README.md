@@ -33,3 +33,13 @@ Be sure to also check out the [Dalamud Developer Docs][dalamud-docs] for helpful
 [new-repo]: https://github.com/new?template_name=GlamSiphon&template_owner=goatcorp
 [dalamud-docs]: https://dalamud.dev
 [submit]: https://dalamud.dev/plugin-development/plugin-submission
+
+
+
+
+
+https://github.com/xivdev/Xande
+https://github.com/Ottermandias/Glamourer
+https://github.com/Ottermandias/OtterGui/tree/f55733a96fdc9f82c9bbf8272ca6366079aa8e32
+https://github.com/Ottermandias/Penumbra.Api/tree/80f9793ef2ddaa50246b7112fde4d9b2098d8823
+https://github.com/Ottermandias/Penumbra.GameData/tree/545aab1f007158a5d53bc6a7d73b6b2992deb9b3

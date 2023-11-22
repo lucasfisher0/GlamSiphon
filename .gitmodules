@@ -1,3 +1,8 @@
 [submodule "Xande"]
 	path = Xande
 	url = git@github.com:xivdev/Xande.git
+	branch = main
+[submodule "Glamourer"]
+	path = Glamourer
+	url = git@github.com:Ottermandias/Glamourer.git
+	branch = main
