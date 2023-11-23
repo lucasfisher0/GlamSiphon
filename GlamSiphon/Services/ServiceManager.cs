@@ -6,6 +6,7 @@ using OtterGui.Log;
 using Penumbra.GameData.Data;
 using GlamSiphon.Gui;
 using GlamSiphon.Interop;
+using Xande;
 
 namespace GlamSiphon.Services;
 
@@ -42,16 +43,18 @@ public static class ServiceManager
                    .AddSingleton<Configuration>();
 
     private static IServiceCollection AddEvents( this IServiceCollection services )
-        => services.AddSingleton<TabSelected>();
+        => services.AddSingleton<TabSelected>()
+                   .AddSingleton<PenumbraReloaded>();
 
     private static IServiceCollection AddData( this IServiceCollection services )
         => services.AddSingleton<ExportService>()
-                   .AddSingleton<ActorService>(); /* TODO: Data
-                    .AddSingleton<IdentifierService>()
-                   .AddSingleton<ItemService>()
-                   .AddSingleton<CustomizationService>()
-                   .AddSingleton<ItemManager>()
-                   .AddSingleton<HumanModelList>(); */
+                   .AddSingleton<ActorService>()
+                   .AddSingleton<LuminaManager>(); /* TODO: Data
+                   .AddSingleton<IdentifierService>()
+                  .AddSingleton<ItemService>()
+                  .AddSingleton<CustomizationService>()
+                  .AddSingleton<ItemManager>()
+                  .AddSingleton<HumanModelList>(); */
 
     private static IServiceCollection AddInterop( this IServiceCollection services )
         => services.AddSingleton<ObjectManager>()
