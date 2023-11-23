@@ -39,7 +39,10 @@ public class SettingsTab : ITab
                       v => _config.IncludeGlamourer = v );
         }
 
-        if ( ImGui.CollapsingHeader( "Export Options" ) ) { }
+        if ( ImGui.CollapsingHeader( "Export Options" ) )
+        {
+            ImGui.TextUnformatted( "No settings here!" );
+        }
 
         if ( ImGui.CollapsingHeader( "Other" ) )
         {
@@ -48,6 +51,9 @@ public class SettingsTab : ITab
                       _config.DebugMode,
                       v => _config.DebugMode = v );
         }
+        
+        if (ImGui.Button("Apply##CustomizeCharacter"))
+            GlamSiphon.Log.Information( "Congratulations, you have clicked the apply settings button." );
     }
 
     [MethodImpl( MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization )]

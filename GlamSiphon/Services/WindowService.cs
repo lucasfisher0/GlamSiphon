@@ -5,13 +5,13 @@ using GlamSiphon.Gui;
 
 namespace GlamSiphon.Services;
 
-public class GlamourerWindowSystem : IDisposable
+public class GSWindowService : IDisposable
 {
     private readonly WindowSystem _windowSystem = new(GlamSiphon.Name);
     private readonly UiBuilder    _uiBuilder;
     private readonly MainWindow   _ui;
 
-    public GlamourerWindowSystem(
+    public GSWindowService(
         UiBuilder     uiBuilder,
         MainWindow    ui,
         Configuration config )

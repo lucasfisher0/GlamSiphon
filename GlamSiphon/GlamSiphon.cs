@@ -42,20 +42,19 @@ public class GlamSiphon : IDalamudPlugin
             _services = ServiceManager.CreateProvider(pluginInterface, Log);
             Messager  = _services.GetRequiredService<MessageService>();
             // _services.GetRequiredService<StateListener>();         // Initialize State Listener.
-            // _services.GetRequiredService<GlamourerWindowSystem>(); // initialize ui.
-            // _services.GetRequiredService<CommandService>();        // initialize commands.
+            _services.GetRequiredService<GSWindowService>(); // initialize ui.
+            _services.GetRequiredService<CommandService>();        // initialize commands.
             // _services.GetRequiredService<VisorService>();
             // _services.GetRequiredService<ScalingService>();
             Log.Information($"GlamSiphon v{Version} loaded successfully.");
+            
+            
         }
         catch
         {
-            IPluginLog logger = _services?.GetService<IPluginLog>();
-            if (logger is not null)
-            {
-                logger.Fatal( $"{Name}: unable to start!" );
-            }
-            
+            IPluginLog? logger = _services?.GetService<IPluginLog>();
+            logger?.Fatal( $"{Name}: unable to start!" );
+
             Dispose();
             throw;
         }

@@ -5,7 +5,6 @@ using GlamSiphon.Services;
 using Newtonsoft.Json.Serialization;
 using System.IO;
 using Dalamud.Interface.Internal.Notifications;
-using GlamSiphon.Services;
 using Newtonsoft.Json;
 using OtterGui.Classes;
 using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;

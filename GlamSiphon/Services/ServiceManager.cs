@@ -77,7 +77,6 @@ public static class ServiceManager
                    .AddSingleton<MainWindow>();
 
     private static IServiceCollection AddApi( this IServiceCollection services )
-        => services; /* TODO: API
-        services.AddSingleton<CommandService>()
-            .AddSingleton<GlamourerIpc>();*/
+        => services.AddSingleton<CommandService>();
+                // .AddSingleton<GlamourerIpc>();
 }

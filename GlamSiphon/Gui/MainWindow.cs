@@ -29,7 +29,7 @@ public class MainWindow : Window, IDisposable
     public readonly DebugTab    Debug;
     public readonly ActorTab    Actors;
 
-    public TabType SelectTab = TabType.None;
+    public TabType SelectedTab = TabType.None;
 
     public MainWindow(
         DalamudPluginInterface pi,
@@ -71,24 +71,24 @@ public class MainWindow : Window, IDisposable
     {
         _event.Unsubscribe( OnTabSelected );
     }
-    
+
     public override void Draw()
     {
         var yPos = ImGui.GetCursorPosY();
-        if ( TabBar.Draw( "##tabs", ImGuiTabBarFlags.None, ToLabel( SelectTab ), out var currentTab, () => { },
+        if ( TabBar.Draw( "##tabs", ImGuiTabBarFlags.None, ToLabel( SelectedTab ), out var currentTab, () => { },
                           _tabs ) )
         {
-            SelectTab                    = TabType.None;
+            SelectedTab                  = TabType.None;
             _transientConfig.SelectedTab = FromLabel( currentTab );
         }
     }
 
     private void OnTabSelected( TabType type )
     {
-        SelectTab = type;
-        IsOpen    = true;
+        SelectedTab = type;
+        IsOpen      = true;
     }
-    
+
     private ReadOnlySpan<byte> ToLabel( TabType type )
         => type switch
         {
