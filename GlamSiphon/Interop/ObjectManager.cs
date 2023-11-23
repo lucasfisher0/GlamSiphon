@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game.Control;
-using Glamourer.Interop.Structs;
-using Glamourer.Services;
+using GlamSiphon.Services;
 using Penumbra.GameData.Actors;
+using GlamSiphon.Interop.Structs;
 
 namespace GlamSiphon.Interop;
 

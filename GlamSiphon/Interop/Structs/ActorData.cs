@@ -3,7 +3,7 @@ using System.Linq;
 using OtterGui.Log;
 using Penumbra.GameData.Actors;
 
-namespace Glamourer.Interop.Structs;
+namespace GlamSiphon.Interop.Structs;
 
 /// <summary>
 /// A single actor with its label and the list of associated game objects.

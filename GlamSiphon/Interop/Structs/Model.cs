@@ -90,8 +90,9 @@ public readonly unsafe struct Model : IEquatable<Model>
     public CharacterArmor GetArmor(EquipSlot slot)
         => ((CharacterArmor*)&AsHuman->Head)[slot.ToIndex()];
 
-    public Customize GetCustomize()
-        => *(Customize*)&AsHuman->Customize;
+    // TODO: RETRIEVE CUSTOMIZED SETTINGS FROM GLAMOUR
+    /* public Customize GetCustomize()
+        => *(Customize*)&AsHuman->Customize; */
 
     public (Model Address, CharacterWeapon Data) GetMainhand()
     {
