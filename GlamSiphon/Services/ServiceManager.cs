@@ -1,4 +1,5 @@
 ﻿using Dalamud.Plugin;
+using GlamSiphon.Events;
 using Microsoft.Extensions.DependencyInjection;
 using OtterGui.Classes;
 using OtterGui.Log;
@@ -34,24 +35,13 @@ public static class ServiceManager
 
     private static IServiceCollection AddMeta( this IServiceCollection services )
         => services.AddSingleton<MessageService>()
+                   .AddSingleton<FilenameService>()
                    .AddSingleton<FrameworkManager>()
+                   .AddSingleton<SaveService>()
                    .AddSingleton<Configuration>();
 
     private static IServiceCollection AddEvents( this IServiceCollection services )
-        => services; /* TODO: Events
-        services.AddSingleton<VisorStateChanged>()
-            .AddSingleton<SlotUpdating>()
-            .AddSingleton<DesignChanged>()
-            .AddSingleton<AutomationChanged>()
-            .AddSingleton<StateChanged>()
-            .AddSingleton<WeaponLoading>()
-            .AddSingleton<HeadGearVisibilityChanged>()
-            .AddSingleton<WeaponVisibilityChanged>()
-            .AddSingleton<ObjectUnlocked>()
-            .AddSingleton<TabSelected>()
-            .AddSingleton<MovedEquipment>()
-            .AddSingleton<GPoseService>()
-            .AddSingleton<PenumbraReloaded>(); */
+        => services.AddSingleton<TabSelected>(); 
 
     private static IServiceCollection AddData( this IServiceCollection services )
         => services; /* TODO: Data

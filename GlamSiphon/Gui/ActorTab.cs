@@ -1,5 +1,6 @@
 ﻿using System;
 using ImGuiNET;
+using OtterGui.Raii;
 using OtterGui.Widgets;
 
 
@@ -12,6 +13,10 @@ public class ActorTab : ITab
 
     public void DrawContent()
     {
+        using var child = ImRaii.Child("MainWindowChild");
+        if (!child)
+            return;
+        
         ImGui.TextUnformatted( $"This is the actors tab." );
     }
 }

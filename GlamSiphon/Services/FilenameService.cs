@@ -9,7 +9,7 @@ using OtterGui.Log;
 
 namespace GlamSiphon.Services;
 
-public class FileService
+public class FilenameService
 {
     public readonly string ConfigDirectory;
     public readonly string ConfigFile;
@@ -19,7 +19,7 @@ public class FileService
     
     public readonly string LastExportDirectory;
     
-    public FileService(DalamudPluginInterface pi)
+    public FilenameService(DalamudPluginInterface pi)
     {
         ConfigDirectory     = pi.ConfigDirectory.FullName;
         ConfigFile          = pi.ConfigFile.FullName;
