@@ -1,28 +1,26 @@
 ﻿using Dalamud.Configuration;
 using Dalamud.Plugin;
 using System;
+using Newtonsoft.Json;
 
-namespace GlamSiphon
+
+namespace GlamSiphon;
+
+[Serializable]
+public class Configuration : IPluginConfiguration
 {
-    [Serializable]
-    public class Configuration : IPluginConfiguration
+    public static class Constants
     {
-        public int Version { get; set; } = 0;
-
-        public bool SomePropertyToBeSavedAndWithADefault { get; set; } = true;
-
-        // the below exist just to make saving less cumbersome
-        [NonSerialized]
-        private DalamudPluginInterface? PluginInterface;
-
-        public void Initialize(DalamudPluginInterface pluginInterface)
-        {
-            this.PluginInterface = pluginInterface;
-        }
-
-        public void Save()
-        {
-            this.PluginInterface!.SavePluginConfig(this);
-        }
+        public const byte CurrentVersion = 0;
     }
+
+    public int  Version          { get; set; } = Constants.CurrentVersion;
+    public bool IncludePenumbra  { get; set; } = true;
+    public bool IncludeGlamourer { get; set; } = true;
+
+#if DEBUG
+    public bool DebugMode { get; set; } = true;
+#else
+    public bool DebugMode { get; set; } = false;
+#endif
 }

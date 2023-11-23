@@ -51,6 +51,7 @@
     <!-- Packages -->
     <ItemGroup>
         <PackageReference Include="DalamudPackager" Version="2.1.12" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
         <Reference Include="Dalamud">
             <HintPath>$(DalamudLibPath)Dalamud.dll</HintPath>
             <Private>False</Private>
@@ -83,15 +84,9 @@
 
     <!-- External Projects -->
     <ItemGroup>
-        <!--<ProjectReference Include="..\Glamourer\Glamourer\Glamourer.csproj" />-->
+        <ProjectReference Include="..\Glamourer\Glamourer\Glamourer.csproj" />
         <ProjectReference Include="..\Xande\Xande\Xande.csproj"/>
     </ItemGroup>
     
     <!-- Assets -->
-    <ItemGroup>
-        <!--<Content Include="..\Data\goat.png">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-          <Visible>false</Visible>
-        </Content>-->
-    </ItemGroup>
 </Project>

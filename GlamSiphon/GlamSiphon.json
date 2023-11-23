@@ -1,13 +1,14 @@
 {
-  "Author": "your name here",
-  "Name": "Sample Plugin",
-  "Punchline": "A short one-liner that shows up in /xlplugins.",
-  "Description": "A description that shows up in /xlplugins. List any major slash-command(s).",
-  "InternalName": "GlamSiphon",
-  "ApplicableVersion": "any",
-  "Tags": [
-    "sample",
-    "plugin",
-    "goats"
-  ]
+    "Author": "lucasfisher0",
+    "Name": "GlamSiphon",
+    "Punchline": "Export your final character model after all modifications.",
+    "Description": "Requires Penumbra/Glamourer.",
+    "InternalName": "GlamSiphon",
+    "AssemblyVersion": "0.0.0.1",
+    "RepoUrl": "https://github.com/lucasfisher0/GlamSiphon",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 9,
+    "ImageUrls": null,
+    "IconUrl": "https://github.com/lucasfisher0/GlamSiphon/master/plugin-icon.png",
+    "Tags": []
 }

@@ -8,6 +8,15 @@
         "resolved": "2.1.12",
         "contentHash": "Sc0PVxvgg4NQjcI8n10/VfUQBAS4O+Fw2pZrAqBdRMbthYGeogzu5+xmIGCGmsEZ/ukMOBuAqiNiB5qA3MRalg=="
       },
+      "Microsoft.Extensions.DependencyInjection": {
+        "type": "Direct",
+        "requested": "[7.0.0, )",
+        "resolved": "7.0.0",
+        "contentHash": "elNeOmkeX3eDVG6pYVeV82p29hr+UKDaBhrZyWvWLw/EVZSYEkZlQdkp0V39k/Xehs2Qa0mvoCvkVj3eQxNQ1Q==",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
+        }
+      },
       "Dalamud.ContextMenu": {
         "type": "Transitive",
         "resolved": "1.3.1",
@@ -17,14 +26,6 @@
         "type": "Transitive",
         "resolved": "3.11.0",
         "contentHash": "G7HQq2i5k4eL8kXxQCtrwQtRBuQi5qW1reb5oYZv+hazgOgpqX6YAX56dW6r5uraef1L1j/jMXMlXQDb3wMUmQ=="
-      },
-      "Microsoft.Extensions.DependencyInjection": {
-        "type": "Transitive",
-        "resolved": "7.0.0",
-        "contentHash": "elNeOmkeX3eDVG6pYVeV82p29hr+UKDaBhrZyWvWLw/EVZSYEkZlQdkp0V39k/Xehs2Qa0mvoCvkVj3eQxNQ1Q==",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
-        }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions": {
         "type": "Transitive",
@@ -66,7 +67,7 @@
           "OtterGui": "[1.0.0, )",
           "Penumbra.Api": "[1.0.12, )",
           "Penumbra.GameData": "[1.0.0, )",
-          "Penumbra.string": "[1.0.4, )"
+          "Penumbra.String": "[1.0.4, )"
         }
       },
       "glamourer.gamedata": {
@@ -86,7 +87,7 @@
         "type": "Project",
         "dependencies": {
           "Penumbra.Api": "[1.0.12, )",
-          "Penumbra.string": "[1.0.4, )"
+          "Penumbra.String": "[1.0.4, )"
         }
       },
       "penumbra.string": {
