@@ -18,7 +18,7 @@ public class GSWindowService : IDisposable
     {
         _uiBuilder = uiBuilder;
         _ui        = ui;
-
+        _windowSystem.AddWindow(ui);
         _uiBuilder.Draw         += _windowSystem.Draw;
         _uiBuilder.OpenConfigUi += _ui.Toggle;
     }

@@ -5,6 +5,7 @@ using OtterGui.Classes;
 using OtterGui.Log;
 using Penumbra.GameData.Data;
 using GlamSiphon.Gui;
+using GlamSiphon.Interop;
 
 namespace GlamSiphon.Services;
 
@@ -41,42 +42,43 @@ public static class ServiceManager
                    .AddSingleton<Configuration>();
 
     private static IServiceCollection AddEvents( this IServiceCollection services )
-        => services.AddSingleton<TabSelected>(); 
+        => services.AddSingleton<TabSelected>();
 
     private static IServiceCollection AddData( this IServiceCollection services )
-        => services; /* TODO: Data
-        services.AddSingleton<IdentifierService>()
-            .AddSingleton<ItemService>()
-            .AddSingleton<ActorService>()
-            .AddSingleton<CustomizationService>()
-            .AddSingleton<ItemManager>()
-            .AddSingleton<HumanModelList>(); */
+        => services.AddSingleton<ExportService>()
+                   .AddSingleton<ActorService>(); /* TODO: Data
+                    .AddSingleton<IdentifierService>()
+                   .AddSingleton<ItemService>()
+                   .AddSingleton<CustomizationService>()
+                   .AddSingleton<ItemManager>()
+                   .AddSingleton<HumanModelList>(); */
 
     private static IServiceCollection AddInterop( this IServiceCollection services )
-        => services; /* TODO: Interop
-        services.AddSingleton<VisorService>()
-            .AddSingleton<ChangeCustomizeService>()
-            .AddSingleton<MetaService>()
-            .AddSingleton<UpdateSlotService>()
-            .AddSingleton<WeaponService>()
-            .AddSingleton<PenumbraService>()
-            .AddSingleton<ObjectManager>()
-            .AddSingleton<PenumbraAutoRedraw>()
-            .AddSingleton<JobService>()
-            .AddSingleton<CustomizeUnlockManager>()
-            .AddSingleton<ItemUnlockManager>()
-            .AddSingleton<ImportService>()
-            .AddSingleton<InventoryService>()
-            .AddSingleton<ContextMenuService>()
-            .AddSingleton<ScalingService>(); */
+        => services.AddSingleton<ObjectManager>()
+                   .AddSingleton<PenumbraService>(); /* TODO: Interop
+                   services.AddSingleton<VisorService>()
+                       .AddSingleton<ChangeCustomizeService>()
+                       .AddSingleton<MetaService>()
+                       .AddSingleton<UpdateSlotService>()
+                       .AddSingleton<WeaponService>()
+                       .AddSingleton<ObjectManager>()
+                       .AddSingleton<PenumbraAutoRedraw>()
+                       .AddSingleton<JobService>()
+                       .AddSingleton<CustomizeUnlockManager>()
+                       .AddSingleton<ItemUnlockManager>()
+                       .AddSingleton<ImportService>()
+                       .AddSingleton<InventoryService>()
+                       .AddSingleton<ContextMenuService>()
+                       .AddSingleton<ScalingService>(); */
 
     private static IServiceCollection AddUi( this IServiceCollection services )
-        => services.AddSingleton<SettingsTab>()
+        => services.AddSingleton<GSWindowService>()
+                   .AddSingleton<SettingsTab>()
                    .AddSingleton<DebugTab>()
                    .AddSingleton<ActorTab>()
                    .AddSingleton<MainWindow>();
 
     private static IServiceCollection AddApi( this IServiceCollection services )
         => services.AddSingleton<CommandService>();
-                // .AddSingleton<GlamourerIpc>();
+    // .AddSingleton<GlamourerIpc>();
 }

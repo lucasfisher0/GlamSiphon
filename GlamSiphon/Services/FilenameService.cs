@@ -17,12 +17,12 @@ public class FilenameService
     
     
     
-    public readonly string LastExportDirectory;
+    public readonly string DefaultExportDirectory;
     
     public FilenameService(DalamudPluginInterface pi)
     {
-        ConfigDirectory     = pi.ConfigDirectory.FullName;
-        ConfigFile          = pi.ConfigFile.FullName;
-        LastExportDirectory = Path.Combine( ConfigDirectory, "Export" );
+        ConfigDirectory        = pi.ConfigDirectory.FullName;
+        ConfigFile             = pi.ConfigFile.FullName;
+        DefaultExportDirectory = Path.Combine( ConfigDirectory, "Export" );
     }
 }

@@ -24,6 +24,8 @@ public partial class Configuration : IPluginConfiguration, ISavable
     public bool IncludePenumbra  { get; set; } = true;
     public bool IncludeGlamourer { get; set; } = true;
 
+    public string ExportDirectory { get; set; } = string.Empty;
+
 #if DEBUG
     public bool DebugMode { get; set; } = true;
 #else
@@ -31,7 +33,7 @@ public partial class Configuration : IPluginConfiguration, ISavable
 #endif
 
     [JsonIgnore]
-    private readonly SaveService _saveService;
+    internal readonly SaveService _saveService;
 
     public Configuration( SaveService saveService )
     {
@@ -50,15 +52,15 @@ public partial class Configuration : IPluginConfiguration, ISavable
                 $"Error parsing Configuration at {errorArgs.ErrorContext.Path}, using default or migrating:\n{errorArgs.ErrorContext.Error}" );
             errorArgs.ErrorContext.Handled = true;
         }
-
-        if ( !File.Exists( _saveService.FilenameNames.ConfigFile ) )
+        
+        if ( !File.Exists( _saveService.FileNames.ConfigFile ) )
             return;
 
-        if ( File.Exists( _saveService.FilenameNames.ConfigFile ) )
+        if ( File.Exists( _saveService.FileNames.ConfigFile ) )
             try
             {
                 GlamSiphon.Log.Debug( $"Attempting to read existing configuration file." );
-                var text = File.ReadAllText(_saveService.FilenameNames.ConfigFile);
+                var text = File.ReadAllText(_saveService.FileNames.ConfigFile);
                 JsonConvert.PopulateObject(text, this, new JsonSerializerSettings
                 {
                     Error = HandleDeserializationError,

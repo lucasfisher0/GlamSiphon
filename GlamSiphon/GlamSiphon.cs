@@ -41,14 +41,13 @@ public class GlamSiphon : IDalamudPlugin
             Log.Information($"{Name}: Starting services.");
             _services = ServiceManager.CreateProvider(pluginInterface, Log);
             Messager  = _services.GetRequiredService<MessageService>();
-            // _services.GetRequiredService<StateListener>();         // Initialize State Listener.
-            _services.GetRequiredService<GSWindowService>(); // initialize ui.
-            _services.GetRequiredService<CommandService>();        // initialize commands.
-            // _services.GetRequiredService<VisorService>();
-            // _services.GetRequiredService<ScalingService>();
+            _services.GetRequiredService<GSWindowService>();
+            _services.GetRequiredService<CommandService>();
+            _services.GetRequiredService<ExportService>();
             Log.Information($"GlamSiphon v{Version} loaded successfully.");
-            
-            
+
+            IChatGui? chatGui = _services.GetService<IChatGui>();
+            chatGui?.Print( "GlamSiphon successfully loaded." );
         }
         catch
         {

@@ -44,11 +44,10 @@ public class MainWindow : Window, IDisposable
         pi.UiBuilder.DisableGposeUiHide = true;
         this.SizeConstraints = new WindowSizeConstraints
         {
-            MinimumSize = new Vector2( 375,            330 ),
+            MinimumSize = new Vector2( 500,            350 ),
             MaximumSize = new Vector2( float.MaxValue, float.MaxValue )
         };
-
-
+        
         // Get tab singletons
         Settings = settingsTab;
         Debug    = debugTab;
