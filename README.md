@@ -1,6 +1,12 @@
 # GlamSiphon
 
-WIP. Model exporter for FFXIV characters-- after the effects of Penumbra mods and Glamourer equipment alterations.
+For the literal one person following this-- seems like Penumbra added a basic model export. I am currently waiting on a couple of different features in Penumbra and Dalamud, but I do plan to pick this back up eventually.
+
+Roadmap:
+* Support basic model export as is currently done in Penumbra
+* Resolve all Penumbra/Glamourer overrides (file, metadata, etc.)
+* Apply material parameters to files to export textures that match character customization
+* Ensure skeletons are exported in order and work properly
 
 
 ## Main Points
